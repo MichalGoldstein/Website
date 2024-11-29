@@ -4,97 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michal N. Goldstein - CV</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f9;
-            color: #333;
+            background: url('background4.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0; /* Remove default margins */
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f8f4ed; /* Light beige background */
+            color: #333;
         }
-        header {
-            background: #555;
-            color: white;
+
+        /* Navigation Bar */
+        nav {
+            background-color: #fff;
             padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            font-weight: 400;
+        }
+
+        nav a:hover {
+            color: #818f98; /* highlight on hover */
+        }
+
+        /* Profile Section */
+        .profile-container {
             display: flex;
             align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 35px auto;
+            padding: 18px;
+            max-width: 900px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        header img {
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            margin-right: 20px;
+
+        /* Contact Section */
+        a[href^="mailto:"] {
+            color: #2a3a52; /* Change color to #818f98 */
+            text-decoration: none; /* Remove underline, optional */
         }
-        header h1 {
+
+        a[href^="mailto:"]:hover {
+            color: #818f98; /* Optional: Change color on hover */
+        }
+
+        .profile-image {
+            flex: 1;
+            max-width: 300px;
+            margin: 20px;
+        }
+
+        .profile-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .profile-text {
+            flex: 2;
+            text-align: left;
+            padding: 18px;
+        }
+
+        .profile-text h1 {
             margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
         }
-        header p {
-            margin: 5px 0 0;
+
+        h2 {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-top: 5px;
+            color: #555;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
+
+        .profile-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 10px 0;
         }
-        section {
-            margin-bottom: 20px;
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: flex-start; /* Centers the icons horizontally */
+            gap: 30px; /* Space between icons */
         }
-        h1, h2, h3 {
-            color: #444;
+
+        .icon {
+            width: 30px; /* Adjust the size of the icons */
+            height: 30px; /* Maintain aspect ratio */
+            transition: transform 0.3s ease; /* Add hover effect */
         }
+
+        .icon:hover {
+            transform: scale(1.2); /* Slightly enlarge on hover */
+            }
+
+        /* Footer */
         footer {
-            background: #555;
-            color: white;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .cv-links a {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px 15px;
-            background: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .cv-links a:hover {
-            background: #0056b3;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="profile.png" alt="Michal N. Goldstein">
-        <div>
-            <h1>Michal N. Goldstein</h1>
-            <p>Music Technology | Cognitive Science | Neuroscience</p>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#about">about</a>
+        <a href="#curriculum vitae ">curriculum vitae </a>
+        <a href="#projects">projects</a>
+    </nav>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="profile.png" alt="Michal N. Goldstein">
         </div>
-    </header>
-    <div class="container">
-        <section>
-            <h2>About Me</h2>
-            <p>PhD candidate at New York University, specializing in music technology, cognitive science, and neuroscience. Passionate about exploring the intersections of music, the brain, and machine learning.</p>
-        </section>
-        <section>
-            <h2>Curriculum Vitae</h2>
-            <p>View or download my CV below:</p>
-            <div class="cv-links">
-                <a href="Goldstein_CV.pdf" target="_blank">View CV</a>
-                <a href="Goldstein_CV.pdf" download="Goldstein_CV.pdf">Download CV</a>
+        <div class="profile-text">
+            <h1>Michal N. Goldstein</h1>
+            <p style="font-size: 2rem; font-weight: 700600; color: #555; margin-top: 5px;">
+                PhD Candidate <br>
+                New York University
+            </p>
+            <h2>Music Technology | Music Theory | Cognitive Psychology | Machine Learning
+            <p>Email: <a href="mailto:mng320@nyu.edu">mng320 [at] nyu [dot] edu</a></p>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/michal-goldstein-a39b7022a/" target="_blank" rel="noopener noreferrer">
+                    <img src="logos/google-scholar-svgrepo-com.svg" alt="Google Scholar" class="icon">
+                </a>
+                <a href="https://www.researchgate.net/profile/Michal-Goldstein-3" target="_blank" rel="noopener noreferrer">
+                    <img src="logos/linkedin.svg" alt="LinkedIn" class="icon">
+                </a>
+                <a href="https://scholar.google.co.il/citations?user=_9RoPekAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
+                    <img src="logos/google-scholar-svgrepo-com.svg" alt="ResearchGate" class="icon">
+                </a>
             </div>
-        </section>
-        <section>
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:mng320@nyu.edu">mng320@nyu.edu</a></p>
-            <p>Phone: (646)-623-3021</p>
-        </section>
+
+        </div>
     </div>
+
+    <!-- Footer -->
     <footer>
         &copy; 2024 Michal N. Goldstein
     </footer>
