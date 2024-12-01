@@ -8,11 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+        section {
+            margin-top: 100px; /* Space above each section */
+            margin-bottom: 100px; /* Space below each section */
+            padding: 100px;
+            border-radius: 8px;
+        }
         body {
             background: url('background4.png') no-repeat center center fixed;
             background-size: cover;
             margin: 0; /* Remove default margins */
-            padding: 0;
+            padding: 50px;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
@@ -22,7 +32,11 @@
 
         /* Navigation Bar */
         nav {
-            background-color: #fff;
+            position: fixed; /* Fixes the nav bar to the top */
+            top: 0; /* Aligns it to the top of the viewport */
+            width: 100%; /* Ensures it spans the full width */
+            z-index: 1000; /* Keeps it above other content */
+            background-color: #fff; /* Maintains background color */
             padding: 10px 20px;
             border-bottom: 1px solid #ddd;
             text-align: center;
@@ -107,6 +121,12 @@
             gap: 30px; /* Space between icons */
         }
 
+        .social-links img[alt="GitHub"] {
+            width: 32px; /* Adjust the size */
+            height: 31px; /* Maintain aspect ratio */
+            border-radius: 5px;
+        }
+
         .icon {
             width: 30px; /* Adjust the size of the icons */
             height: 30px; /* Maintain aspect ratio */
@@ -116,6 +136,118 @@
         .icon:hover {
             transform: scale(1.2); /* Slightly enlarge on hover */
             }
+
+        /* Style for the CV section */
+        #curriculum-vitae {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .cv-preview {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #2a3a52;
+            color: #f8f4ed;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #818f98;
+        }
+
+        /* Affiliations Section */
+        #affiliations h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .affiliations-container {
+            display: flex;
+            justify-content: space-between; /* Adjust as needed */
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .affiliations-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .affiliation-section h3 {
+            text-align: center;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        .affiliation-logos {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: top;
+            gap: 30px;
+        }
+
+        .affiliation-logos a img {
+            width: 100px;
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .affiliation-logos a img:hover {
+            transform: scale(1.1);
+        }
+        @media (max-width: 768px) {
+            .affiliations-container {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 768px) {
+            .affiliation-logos {
+                justify-content: center; /* Center the logos on smaller screens */
+            }
+        }
+
+        /* About Section */
+        #about h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .about-container {
+            text-align: left;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            flex-wrap: wrap;
+            padding: 18px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: auto;
+        }
+
+        .about-section {
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+            margin: 0 15px;
+        }
+
+        .about-text {
+        font-size: 16px; /* Adjust font-size as needed */
+        line-height: 2;  /* Adjust line-height as needed */
+        }
 
         /* Footer */
         footer {
@@ -128,11 +260,14 @@
     </style>
 </head>
 <body>
+    <body id="home">
     <!-- Navigation Bar -->
     <nav>
+        <a href="#home">home</a>
         <a href="#about">about</a>
         <a href="#curriculum vitae ">curriculum vitae </a>
-        <a href="#projects">projects</a>
+        <a href="#publications and conferences">publications and conferences</a>
+        <a href="#affiliations">affiliations</a>
     </nav>
 
     <!-- Profile Section -->
@@ -160,10 +295,84 @@
                 <a href="https://scholar.google.co.il/citations?user=_9RoPekAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
                     <img src="logos/google-scholar-svgrepo-com.svg" alt="ResearchGate" class="icon">
                 </a>
+                <a href="https://github.com/MichalGoldstein" target="_blank" rel="noopener noreferrer">
+                    <img src="logos/github-square-svgrepo-com.svg" alt="GitHub" class="icon">
+                </a>
             </div>
 
         </div>
     </div>
+
+    <section id="about">
+        <h1>About</h1>
+        <div class="about-container">
+            <div class="about-section">
+                <p class="about-text">
+                    Welcome! I’m Michal Goldstein, a PhD candidate in Music Technology at NYU, where I bridge the worlds of <b>music, cognitive science, and machine learning</b>. At the Music and Audio Research Laboratory, I explore how humans perceive and respond to music, uncovering patterns in melodic structures and emotional expression through <b>computational tools</b>.
+                    <br><br>
+                    My academic journey, from a BA in Psychology and Musicology to an MA in Musicology and Cognitive Sciences at The Hebrew University of Jerusalem, led me to NYU, where I continue to investigate the <b>intersections of music and technology</b>.
+                    <br><br>
+                    In addition to research, I’m passionate about <b>teaching and mentoring</b>. As an adjunct professor and teaching assistant, I’ve guided students in music cognition, keyboard harmony, and research methodologies, fostering collaboration and critical thinking.
+                    <br><br>
+                    Thank you for stopping by—I invite you to explore my work and join me in the exciting dialogue between <b>music, the brain, and technology</b>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="curriculum vitae">
+        <h1>Curriculum Vitae</h1>
+        <!-- Small Version of the CV -->
+        <div class="cv-preview">
+            <embed src="Goldstein_CV.pdf" type="application/pdf" width="28%" height="550px">
+        </div>
+    
+        <!-- Button to Download the CV -->
+        <a href="Goldstein_CV.pdf" download="Goldstein_CV.pdf" target="_blank" rel="noopener noreferrer" >
+            <button>Download CV</button>
+        </a>
+    </section>
+
+    <!-- Affiliations -->
+    <section id="affiliations">
+        <h1>Affiliations</h1>
+        <div class="affiliations-container">
+        <!-- Current Affiliations -->
+            <div class="affiliations-section">
+                <h3>Current Affiliations</h3>
+                <div class="affiliation-logos">
+                    <a href="https://steinhardt.nyu.edu/marl/about/team" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/MARL.png" alt="Current Affiliation 1">
+                    </a>
+                    <a href="https://clame.nyu.edu/scientist" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/clame.png" alt="Current Affiliation 2">
+                    </a>
+                    <a href="https://www.ripolleslab.com/team.html" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/ripolleslab.png" alt="Current Affiliation 3">
+                    </a>
+                </div>
+            </div>
+    
+        <!-- Past Affiliations -->
+            <div class="affiliations-section">
+                <h3>Past Affiliations</h3>
+                <div class="affiliation-logos">
+                    <a href="https://en.musicology.huji.ac.il/book/about" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/musicology.png" alt="Past Affiliation 1">
+                    </a>
+                    <a href="https://www.musiclab-huji.com/he/our-team/prof.-roni-granot-" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/musicology_lab.PNG" alt="Past Affiliation 2">
+                    </a>
+                    <a href="https://elsc.huji.ac.il/people-directory/faculty-members/israel-nelken/" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/ELSC.svg" alt="Past Affiliation 3">
+                    </a>
+                    </a>
+                    <a href="https://www.landaulab.com/people.html" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/landaulab.png" alt="Past Affiliation 4">
+                    </a>
+                </div>
+            </div>
+    </section>    
 
     <!-- Footer -->
     <footer>
