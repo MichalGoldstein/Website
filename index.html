@@ -160,6 +160,50 @@
             background-color: #818f98;
         }
 
+        /* Publications Container */
+        #publications-and-conferences {
+            background-color: #f9f9f9; /* Light background for the section */
+            padding: 40px 20px; /* Padding around the section */
+            margin: 40px auto; /* Space above and below the section */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 80%; /* Section width */
+        }
+
+        /* Publications List */
+        .publications-list {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            gap: 20px; /* Space between items */
+        }
+
+        /* Individual Publication Items */
+        .publications-item {
+            background-color: white; /* White background for each item */
+            padding: 20px; /* Padding inside each item */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each item */
+        }
+
+        /* Item Title */
+        .publications-item h3 {
+            margin-top: 0; /* Remove extra margin at the top */
+            font-size: 1.2rem; /* Adjust title font size */
+            color: #333; /* Text color */
+        }
+
+        /* Item Details */
+        .publications-item p {
+            margin: 5px 0; /* Spacing between lines */
+            font-size: 0.95rem; /* Slightly smaller text */
+            color: #555; /* Muted text color */
+        }
+
+        .publications-item strong {
+            color: #333; /* Highlighted text */
+        }
+
+
         /* Affiliations Section */
         #affiliations h2 {
             text-align: left;
@@ -266,7 +310,7 @@
         <a href="#home">home</a>
         <a href="#about">about</a>
         <a href="#curriculum vitae ">curriculum vitae </a>
-        <a href="#publications and conferences">publications and conferences</a>
+        <a href="#publications-and-conferences">publications & conferences</a>
         <a href="#affiliations">affiliations</a>
     </nav>
 
@@ -331,6 +375,102 @@
         <a href="Goldstein_CV.pdf" download="Goldstein_CV.pdf" target="_blank" rel="noopener noreferrer" >
             <button>Download CV</button>
         </a>
+    </section>
+
+    <section id="publications-and-conferences">
+        <h1>Publications and Conference Presentations</h1>
+        <div class="publications-list">
+            <div class="publications-item">
+                <h3>Melodic Contour of Speech Intonation</h3>
+                <p><strong>Year:</strong> in preparation</p>
+                <p><strong>Authors:</strong> Michal N. Goldstein, Morwaread M. Farbood, Pablo Ripollés</p>
+            </div>
+            <div class="publications-item">
+                <h3>Exploring melodic contour: A clustering approach</h3>
+                <p><strong>Authors:</strong> Michal N. Goldstein, Roni Granot, Pablo Ripollés, Morwaread M. Farbood</p>
+                <p><strong>Year:</strong> 2024</p>
+                <p><strong>Journal:</strong> Music Perception</p>
+            </div>
+            <div class="publications-item">
+                <h3>CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses</h3>
+                <p><strong>Conference Name:</strong> International Conference on New Interfaces for Musical Expression</p>
+                <p><strong>Year:</strong> 2021</p>
+                <p><strong>Authors:</strong> Claire Pelofi,  Michal N. Goldstein , Dana Bevilacqua, Michael McPhee, Ellie Abrams, Pablo Ripollés</p>
+                <p><strong>Conference Proceedings</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Exploring Melodic Contour Using Machine-Learning Tools</h3>
+                <p><strong>Conference Name:</strong> Conference for Musical Discussions by Early-Career Researchers</p>
+                <p><strong>Year:</strong> 2023</p>
+                <p><strong>Conference Talk</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Exploring Melodic Contour: A Clustering Approach</h3>
+                <p><strong>Conference Name:</strong> International Conference for Systematic Musicology (SysMus)</p>
+                <p><strong>Year:</strong> 2022</p>
+                <p><strong>Conference Talk</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses</h3>
+                <p><strong>Conference Name:</strong> New Interfaces for Musical Expression (NIME)</p>
+                <p><strong>Year:</strong> 2021</p>
+                <p><strong>Poster Presentation</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses</h3>
+                <p><strong>Conference Name:</strong> International Conference on Music Perception and Cognition (ESCOM/ICMPC)</p>
+                <p><strong>Year:</strong> 2021</p>
+                <p><strong>Poster Presentation</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>An Empirical Investigation Into the Cognitive and Physical Influences of Bass and Syncopation</h3>
+                <p><strong>Conference Name:</strong> International Conference on Music Perception and Cognition (ESCOM/ICMPC)</p>
+                <p><strong>Year:</strong> 2021</p>
+                <p><strong>Poster Presentation</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Perception of size of musical intervals</h3>
+                <p><strong>Event:</strong> The Jerusalem Brain Community Brain & Beer event</p>
+                <p><strong>Year:</strong> 2018</p>
+                <p><strong>Invited Speaker</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
+                <p><strong>Conference Name:</strong> International Conference on Music Perception and Cognition (ESCOM/ICMPC)</p>
+                <p><strong>Year:</strong> 2018</p>
+                <p><strong>Conference Talk (long paper)</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Pitch Height Affects Perception of Musical Intervals</h3>
+                <p><strong>Conference Name:</strong> The Jerusalem Brain Community Annual Retreat</p>
+                <p><strong>Year:</strong> 2018</p>
+                <p><strong>Poster Presentation</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Pitch Height Affects Perception of Musical Intervals</h3>
+                <p><strong>Conference Name:</strong> The Israeli Conference on Cognition Research</p>
+                <p><strong>Year:</strong> 2018</p>
+                <p><strong>Poster Presentation</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
+                <p><strong>Conference Name:</strong> Music, Language and Cognition summer school (Lake Como)</p>
+                <p><strong>Year:</strong> 2017</p>
+                <p><strong>Conference Talk</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
+                <p><strong>Conference Name:</strong> The Jerusalem Brain Community Annual Retreat</p>
+                <p><strong>Year:</strong> 2017</p>
+                <p><strong>Poster Presentation (Selected for “Poster Blitz” presentation)</strong> </p>
+            </div>
+            <div class="publications-item">
+                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
+                <p><strong>Conference Name:</strong> The Israeli Conference on Cognition Research</p>
+                <p><strong>Year:</strong> 2017</p>
+                <p><strong>Poster Presentation</strong> </p>
+            </div>
+        </div>
     </section>
 
     <!-- Affiliations -->
