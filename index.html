@@ -20,7 +20,10 @@
         }
         body {
             background: url('background4.png') no-repeat center center fixed;
+            background-color: #f8f8f8; /* Neutral fallback color */
             background-size: cover;
+            background-position: center; /* Keeps the image centered */background-repeat: no-repeat; /* Prevents the image from repeating */
+            background-attachment: fixed; /* Optional: Makes the background stay in place during scroll */
             margin: 0; /* Remove default margins */
             padding: 50px;
             box-sizing: border-box;
@@ -30,6 +33,17 @@
             background-color: #f8f4ed; /* Light beige background */
             color: #333;
         }
+
+        /* For smaller screens: Adjust background behavior */
+        @media (max-width: 768px) {
+            body {
+                background-image: none;
+                background-color: #f8f4ed;
+                background-size: contain; /* Ensure the entire image is visible on small screens */
+                background-attachment: scroll; /* Allow scrolling on smaller devices for better UX */
+            }
+        }
+        
 
         /* Navigation Bar */
         nav {
