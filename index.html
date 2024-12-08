@@ -188,12 +188,31 @@
         #curriculum-vitae {
             margin-top: 40px;
             text-align: center;
+            padding: 20px; /* Add padding for better spacing */
+            background-color: #f9f9f9; /* Optional: Add a light background */
+            border-radius: 8px; /* Rounded corners for a polished look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
+        /* CV Preview Container */
         .cv-preview {
             margin-bottom: 20px;
+            width: 100%; /* Ensures the preview scales with the container */
+            max-width: 800px; /* Prevents the preview from being too wide */
+            aspect-ratio: 16 / 9; /* Maintains proportional scaling */
+            border: 1px solid #ddd; /* Optional: Light border for separation */
+            border-radius: 8px; /* Matches section style */
+            overflow: hidden; /* Prevents content overflow */
         }
 
+        /* Embed or Iframe for the CV */
+        .cv-preview embed {
+            width: 100%;
+            height: 100%;
+            display: block; /* Ensures the preview behaves properly */
+        }
+
+        /* Button Styling */
         button {
             background-color: #2a3a52;
             color: #f8f4ed;
@@ -205,6 +224,18 @@
 
         button:hover {
             background-color: #818f98;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 600px) {
+            #curriculum-vitae {
+                padding: 10px; /* Reduce padding for smaller screens */
+            }
+
+            .cv-preview {
+                width: 100%; /* Use full width on small screens */
+                aspect-ratio: auto; /* Adjust ratio to avoid excessive height */
+            }
         }
 
         /* Publications Container */
