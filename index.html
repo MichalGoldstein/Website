@@ -1,578 +1,606 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>Michal N. Goldstein - CV</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* General Styles */
-        html {
-            scroll-behavior: smooth;
-        }
-        section {
-            margin-top: 100px; /* Space above each section */
-            margin-bottom: 100px; /* Space below each section */
-            padding: 100px;
-            border-radius: 8px;
-        }
-        body {
-            background: url('background4.png') no-repeat center center fixed;
-            background-color: #f8f8f8; /* Neutral fallback color */
-            background-size: cover;
-            background-position: center; /* Keeps the image centered */background-repeat: no-repeat; /* Prevents the image from repeating */
-            background-attachment: fixed; /* Optional: Makes the background stay in place during scroll */
-            margin: 0; /* Remove default margins */
-            padding: 50px;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f4ed; /* Light beige background */
-            color: #333;
-        }
-
-        /* For smaller screens: Adjust background behavior */
-        @media (max-width: 1000px) {
-            body {
-                background-image: none;
-                background-color: #f8f4ed;
-                background-size: contain; /* Ensure the entire image is visible on small screens */
-                background-attachment: scroll; /* Allow scrolling on smaller devices for better UX */
-            }
-        }
-        
-
-        /* Navigation Bar */
-        nav {
-            position: fixed; /* Fixes the nav bar to the top */
-            top: 0; /* Aligns it to the top of the viewport */
-            width: 100%; /* Ensures it spans the full width */
-            z-index: 1000; /* Keeps it above other content */
-            background-color: #fff; /* Maintains background color */
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
-            text-align: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 15px;
-            font-weight: 400;
-        }
-
-        nav a:hover {
-            color: #818f98; /* highlight on hover */
-        }
-
-        /* Profile Section */
-        .profile-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 35px auto;
-            padding: 18px;
-            max-width: 900px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Contact Section */
-        a[href^="mailto:"] {
-            color: #2a3a52; /* Change color to #818f98 */
-            text-decoration: none; /* Remove underline, optional */
-        }
-
-        a[href^="mailto:"]:hover {
-            color: #818f98; /* Optional: Change color on hover */
-        }
-
-        .profile-image {
-            flex: 1;
-            max-width: 300px;
-            margin: 20px;
-        }
-
-        .profile-image img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .profile-text {
-            flex: 2;
-            text-align: left;
-            padding: 18px;
-        }
-
-        .profile-text h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        h2 {
-            font-size: 0.8rem;
-            font-weight: 400;
-            margin-top: 5px;
-            color: #555;
-        }
-
-        .profile-text p {
-            font-size: 1rem;
-            line-height: 1.8;
-            margin: 10px 0;
-        }
-
-        /* Social Links */
-        .social-links {
-            display: flex;
-            justify-content: flex-start; /* Centers the icons horizontally */
-            gap: 30px; /* Space between icons */
-        }
-
-        .social-links img[alt="GitHub"] {
-            width: 32px; /* Adjust the size */
-            height: 31px; /* Maintain aspect ratio */
-            border-radius: 5px;
-        }
-
-        .icon {
-            width: 30px; /* Adjust the size of the icons */
-            height: 30px; /* Maintain aspect ratio */
-            transition: transform 0.3s ease; /* Add hover effect */
-        }
-
-        .icon:hover {
-            transform: scale(1.2); /* Slightly enlarge on hover */
-            }
-
-        /* About Section */
-        #about h2 {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        #about p {
-            font-size: 18px; /* Change the font size to your desired value */
-            line-height: 1.8; /* Adjust the line height for better readability */
-            margin-bottom: 10px; /* Optional: Add spacing between paragraphs */
-            color: #333; /* Ensure text color is consistent */
-        }
-
-        .about-container {
-            text-align: left;
-            display: flex;
-            align-items: left;
-            justify-content: left;
-            flex-wrap: wrap;
-            padding: 18px;
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: auto;
-        }
-
-        .about-section {
-            text-decoration: none;
-            color: #333;
-            font-weight: 400;
-            margin: 0 15px;
-        }
-
-        .about-text {
-        font-size: 20px; /* Adjust font-size as needed */
-        line-height: 2;  /* Adjust line-height as needed */
-        }
-
-        /* Style for the CV section */
-        #curriculum-vitae {
-            margin-top: 40px;
-            text-align: center;
-            padding: 20px; /* Add padding for better spacing */
-            background-color: #f9f9f9; /* Optional: Add a light background */
-            border-radius: 8px; /* Rounded corners for a polished look */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        /* CV Preview Container */
-        .cv-preview {
-            margin-bottom: 20px;
-            width: 100%; /* Ensures the preview scales with the container */
-            max-width: 800px; /* Prevents the preview from being too wide */
-            aspect-ratio: 16 / 9; /* Maintains proportional scaling */
-            border: 1px solid #ddd; /* Optional: Light border for separation */
-            border-radius: 8px; /* Matches section style */
-            overflow: hidden; /* Prevents content overflow */
-        }
-
-        /* Embed or Iframe for the CV */
-        .cv-preview embed {
-            width: 100%;
-            height: 100%;
-            display: block; /* Ensures the preview behaves properly */
-        }
-
-        /* Button Styling */
-        button {
-            background-color: #2a3a52;
-            color: #f8f4ed;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #818f98;
-        }
-
-        /* Responsive Design for Smaller Screens */
-        @media (max-width: 1000px) {
-            #curriculum-vitae {
-                padding: 10px; /* Reduce padding for smaller screens */
-            }
-
-            .cv-preview {
-                width: 100%; /* Use full width on small screens */
-                aspect-ratio: auto; /* Adjust ratio to avoid excessive height */
-            }
-        }
-
-        /* Publications Container */
-        #publications-and-conferences {
-            background-color: #f9f9f9; /* Light background for the section */
-            padding: 40px 20px; /* Padding around the section */
-            margin: 40px auto; /* Space above and below the section */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            width: 80%; /* Section width */
-        }
-
-        /* Publications List */
-        .publications-list {
-            display: flex;
-            flex-direction: column; /* Stack items vertically */
-            gap: 20px; /* Space between items */
-        }
-
-        /* Individual Publication Items */
-        .publications-item {
-            background-color: white; /* White background for each item */
-            padding: 20px; /* Padding inside each item */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each item */
-        }
-
-        /* Item Title */
-        .publications-item h3 {
-            margin-top: 0; /* Remove extra margin at the top */
-            font-size: 1.2rem; /* Adjust title font size */
-            color: #333; /* Text color */
-        }
-
-        /* Item Details */
-        .publications-item p {
-            margin: 5px 0; /* Spacing between lines */
-            font-size: 0.95rem; /* Slightly smaller text */
-            color: #555; /* Muted text color */
-        }
-
-        .publications-item strong {
-            color: #333; /* Highlighted text */
-        }
-
-
-        /* Affiliations Section */
-        #affiliations h2 {
-            text-align: left;
-            margin-bottom: 20px;
-        }
-
-        .affiliations-container {
-            display: flex;
-            justify-content: space-between; /* Adjust as needed */
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: auto;
-            margin: 0 auto;
-        }
-
-        .affiliations-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .affiliation-section h3 {
-            text-align: top;
-            margin-bottom: 50px;
-            width: 100%;
-        }
-
-        .affiliation-logos {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .affiliation-logos a img {
-            width: 100px;
-            height: auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .affiliation-logos a img:hover {
-            transform: scale(1.1);
-        }
-        @media (max-width: 768px) {
-            .affiliations-container {
-                flex-direction: column;
-            }
-        }
-        @media (max-width: 768px) {
-            .affiliation-logos {
-                justify-content: center; /* Center the logos on smaller screens */
-            }
-        }
-
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background-color: #fff;
-            border-top: 1px solid #ddd;
-            margin-top: 40px;
-        }
-    </style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.4">
+  <style type="text/css">
+    body {background-color: #f4eee4}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
 </head>
 <body>
-    <body id="home">
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="#curriculum vitae ">curriculum vitae </a>
-        <a href="#publications-and-conferences">publications & conferences</a>
-        <a href="#affiliations">affiliations</a>
-    </nav>
-
-    <!-- Profile Section -->
-    <div class="profile-container">
-        <div class="profile-image">
-            <img src="profile.png" alt="Michal N. Goldstein">
-        </div>
-        <div class="profile-text">
-            <h1>Michal N. Goldstein</h1>
-            <p style="font-size: 2rem; font-weight: 700600; color: #555; margin-top: 5px;">
-                PhD Candidate <br>
-                New York University
-            </p>
-            <h2>Music Technology | Music Theory | Cognitive Psychology | Machine Learning
-            <p>Email: <a href="mailto:mng320@nyu.edu">mng320 [at] nyu [dot] edu</a></p>
-
-            <!-- Social Links -->
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/michal-goldstein-a39b7022a/" target="_blank" rel="noopener noreferrer">
-                    <img src="logos/google-scholar-svgrepo-com.svg" alt="Google Scholar" class="icon">
-                </a>
-                <a href="https://www.researchgate.net/profile/Michal-Goldstein-3" target="_blank" rel="noopener noreferrer">
-                    <img src="logos/linkedin.svg" alt="LinkedIn" class="icon">
-                </a>
-                <a href="https://scholar.google.co.il/citations?user=_9RoPekAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                    <img src="logos/google-scholar-svgrepo-com.svg" alt="ResearchGate" class="icon">
-                </a>
-                <a href="https://github.com/MichalGoldstein" target="_blank" rel="noopener noreferrer">
-                    <img src="logos/github-square-svgrepo-com.svg" alt="GitHub" class="icon">
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    <section id="about">
-        <h1>About</h1>
-        <div class="about-container">
-            <div class="about-section">
-                <p class="about-text">
-                    <p>Hi! I am Michal Goldstein, a PhD candidate in Music Technology at NYU. </p>
-                    <p>My research focuses on the intersection of <b>music, cognitive science, and machine learning</b>. </p>
-                    <p>At the Music and Audio Research Laboratory, I employ <b>computational methods</b> to investigate human perception and response to music, aiming to uncover underlying patterns in melodic structure and emotional expression.</p>
-                    <p>My academic background, encompassing an undergraduate degree in Psychology and Musicology and a Master's degree in Musicology and Cognitive Sciences from The Hebrew University of Jerusalem, has prepared me for my current research at NYU. I am particularly interested in exploring the <b>convergence of music and technology</b>.</p>
-                    <p>In addition to my research, I am dedicated to <b>teaching and mentorship</b>. As an adjunct professor and teaching assistant, I have guided students in music cognition, keyboard harmony, and research methodologies, fostering a collaborative and critical thinking environment.</p>
-                    <p>I invite you to explore my work and engage in the exciting dialogue between <b>music, the brain, and technology</b>.</p>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="curriculum vitae">
-        <h1>Curriculum Vitae</h1>
-        <!-- Small Version of the CV -->
-        <div class="cv-preview">
-            <embed src="Goldstein_CV.pdf" type="application/pdf" width="28%" height="550px">
-        </div>
-    
-        <!-- Button to Download the CV -->
-        <a href="Goldstein_CV.pdf" download="Goldstein_CV.pdf" target="_blank" rel="noopener noreferrer" >
-            <button>Download Full CV</button>
-        </a>
-    </section>
-
-    <section id="publications-and-conferences">
-        <h1>Publications and Conference Presentations</h1>
-        <div class="publications-list">
-            <div class="publications-item">
-                <h3>The Melodic Contour of Speech Intonation</h3>
-                <p><strong>Year:</strong> in preparation</p>
-                <p><strong>Authors:</strong> Michal N. Goldstein, Morwaread M. Farbood, Pablo Ripollés</p>
-            </div>
-            <div class="publications-item">
-                <h3>Exploring melodic contour: A clustering approach</h3>
-                <p><strong>Authors:</strong> Michal N. Goldstein, Roni Granot, Pablo Ripollés, Morwaread M. Farbood</p>
-                <p><strong>Year:</strong> 2024</p>
-                <p><strong>Journal:</strong> Music Perception</p>
-            </div>
-            <div class="publications-item">
-                <h3>CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses</h3>
-                <p><strong>Conference Name:</strong> International Conference on New Interfaces for Musical Expression</p>
-                <p><strong>Year:</strong> 2021</p>
-                <p><strong>Authors:</strong> Claire Pelofi,  Michal N. Goldstein , Dana Bevilacqua, Michael McPhee, Ellie Abrams, Pablo Ripollés</p>
-                <p><strong>Conference Proceedings</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Exploring Melodic Contour Using Machine-Learning Tools</h3>
-                <p><strong>Conference Name:</strong> Conference for Musical Discussions by Early-Career Researchers</p>
-                <p><strong>Year:</strong> 2023</p>
-                <p><strong>Conference Talk</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Exploring Melodic Contour: A Clustering Approach</h3>
-                <p><strong>Conference Name:</strong> International Conference for Systematic Musicology (SysMus)</p>
-                <p><strong>Year:</strong> 2022</p>
-                <p><strong>Conference Talk</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses</h3>
-                <p><strong>Conference Name:</strong> New Interfaces for Musical Expression (NIME)</p>
-                <p><strong>Year:</strong> 2021</p>
-                <p><strong>Poster Presentation</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses</h3>
-                <p><strong>Conference Name:</strong> International Conference on Music Perception and Cognition (ESCOM/ICMPC)</p>
-                <p><strong>Year:</strong> 2021</p>
-                <p><strong>Poster Presentation</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>An Empirical Investigation Into the Cognitive and Physical Influences of Bass and Syncopation</h3>
-                <p><strong>Conference Name:</strong> International Conference on Music Perception and Cognition (ESCOM/ICMPC)</p>
-                <p><strong>Year:</strong> 2021</p>
-                <p><strong>Poster Presentation</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Perception of size of musical intervals</h3>
-                <p><strong>Event:</strong> The Jerusalem Brain Community Brain & Beer event</p>
-                <p><strong>Year:</strong> 2018</p>
-                <p><strong>Invited Speaker</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
-                <p><strong>Conference Name:</strong> International Conference on Music Perception and Cognition (ESCOM/ICMPC)</p>
-                <p><strong>Year:</strong> 2018</p>
-                <p><strong>Conference Talk (long paper)</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Pitch Height Affects Perception of Musical Intervals</h3>
-                <p><strong>Conference Name:</strong> The Jerusalem Brain Community Annual Retreat</p>
-                <p><strong>Year:</strong> 2018</p>
-                <p><strong>Poster Presentation</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Pitch Height Affects Perception of Musical Intervals</h3>
-                <p><strong>Conference Name:</strong> The Israeli Conference on Cognition Research</p>
-                <p><strong>Year:</strong> 2018</p>
-                <p><strong>Poster Presentation</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
-                <p><strong>Conference Name:</strong> Music, Language and Cognition summer school (Lake Como)</p>
-                <p><strong>Year:</strong> 2017</p>
-                <p><strong>Conference Talk</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
-                <p><strong>Conference Name:</strong> The Jerusalem Brain Community Annual Retreat</p>
-                <p><strong>Year:</strong> 2017</p>
-                <p><strong>Poster Presentation (Selected for “Poster Blitz” presentation)</strong> </p>
-            </div>
-            <div class="publications-item">
-                <h3>Perceiving Musical Intervals: a test case for categorical perception</h3>
-                <p><strong>Conference Name:</strong> The Israeli Conference on Cognition Research</p>
-                <p><strong>Year:</strong> 2017</p>
-                <p><strong>Poster Presentation</strong> </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Affiliations -->
-    <section id="affiliations">
-        <h1>Affiliations</h1>
-        <div class="affiliations-container">
-        <!-- Current Affiliations -->
-            <div class="affiliations-section">
-                <h3>Current Affiliations</h3>
-                <div class="affiliation-logos">
-                    <a href="https://steinhardt.nyu.edu/marl/about/team" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/MARL.png" alt="Current Affiliation 1">
-                    </a>
-                    <a href="https://clame.nyu.edu/scientist" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/clame.png" alt="Current Affiliation 2">
-                    </a>
-                    <a href="https://www.ripolleslab.com/team.html" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/ripolleslab.png" alt="Current Affiliation 3">
-                    </a>
-                </div>
-            </div>
-    
-        <!-- Past Affiliations -->
-            <div class="affiliations-section">
-                <h3>Past Affiliations</h3>
-                <div class="affiliation-logos">
-                    <a href="https://en.musicology.huji.ac.il/book/about" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/musicology.png" alt="Past Affiliation 1">
-                    </a>
-                    <a href="https://www.musiclab-huji.com/he/our-team/prof.-roni-granot-" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/musicology_lab.PNG" alt="Past Affiliation 2">
-                    </a>
-                    <a href="https://elsc.huji.ac.il/people-directory/faculty-members/israel-nelken/" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/ELSC.svg" alt="Past Affiliation 3">
-                    </a>
-                    </a>
-                    <a href="https://www.landaulab.com/people.html" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/landaulab.png" alt="Past Affiliation 4">
-                    </a>
-                    <a href="https://en.mandelschool.huji.ac.il/people/michal-goldstein" target="_blank" rel="noopener noreferrer">
-                        <img src="logos/mandel.png" alt="Past Affiliation 4">
-                    </a>
-                </div>
-            </div>
-    </section>    
-
-    <!-- Footer -->
-    <footer>
-        &copy; 2024 Michal N. Goldstein
-    </footer>
+<p class="p1">@ -1,578 +1,15 @@</p>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Michal N. Goldstein - CV&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* General Styles */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>html {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 100px; /* Space above each section */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 100px; /* Space below each section */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: url('background4.png') no-repeat center center fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f8f8; /* Neutral fallback color */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-size: cover;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-position: center; /* Keeps the image centered */background-repeat: no-repeat; /* Prevents the image from repeating */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-attachment: fixed; /* Optional: Makes the background stay in place during scroll */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0; /* Remove default margins */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Poppins', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8f4ed; /* Light beige background */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* For smaller screens: Adjust background behavior */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 1000px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>background-image: none;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>background-color: #f8f4ed;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>background-size: contain; /* Ensure the entire image is visible on small screens */</p>
+<p class="p1"><span class="Apple-converted-space">                </span>background-attachment: scroll; /* Allow scrolling on smaller devices for better UX */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Navigation Bar */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed; /* Fixes the nav bar to the top */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0; /* Aligns it to the top of the viewport */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%; /* Ensures it spans the full width */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000; /* Keeps it above other content */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff; /* Maintains background color */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 400;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>nav a:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #818f98; /* highlight on hover */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Profile Section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 35px auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Contact Section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>a[href^="mailto:"] {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2a3a52; /* Change color to #818f98 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none; /* Remove underline, optional */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>a[href^="mailto:"]:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #818f98; /* Optional: Change color on hover */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-image {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 300px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-image img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 2;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-text h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 400;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #555;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.profile-text p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Social Links */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-links {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: flex-start; /* Centers the icons horizontally */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 30px; /* Space between icons */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.social-links img[alt="GitHub"] {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 32px; /* Adjust the size */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 31px; /* Maintain aspect ratio */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 30px; /* Adjust the size of the icons */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 30px; /* Maintain aspect ratio */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease; /* Add hover effect */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.icon:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.2); /* Slightly enlarge on hover */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* About Section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#about h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#about p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px; /* Change the font size to your desired value */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8; /* Adjust the line height for better readability */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px; /* Optional: Add spacing between paragraphs */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333; /* Ensure text color is consistent */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.about-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.about-section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 400;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.about-text {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 20px; /* Adjust font-size as needed */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>line-height: 2;<span class="Apple-converted-space">  </span>/* Adjust line-height as needed */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Style for the CV section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#curriculum-vitae {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px; /* Add padding for better spacing */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f9f9f9; /* Optional: Add a light background */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px; /* Rounded corners for a polished look */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* CV Preview Container */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cv-preview {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%; /* Ensures the preview scales with the container */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 800px; /* Prevents the preview from being too wide */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>aspect-ratio: 16 / 9; /* Maintains proportional scaling */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ddd; /* Optional: Light border for separation */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px; /* Matches section style */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden; /* Prevents content overflow */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Embed or Iframe for the CV */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.cv-preview embed {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block; /* Ensures the preview behaves properly */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Button Styling */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #2a3a52;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #f8f4ed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #818f98;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Responsive Design for Smaller Screens */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 1000px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>#curriculum-vitae {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 10px; /* Reduce padding for smaller screens */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.cv-preview {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width: 100%; /* Use full width on small screens */</p>
+<p class="p1"><span class="Apple-converted-space">                </span>aspect-ratio: auto; /* Adjust ratio to avoid excessive height */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Publications Container */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#publications-and-conferences {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f9f9f9; /* Light background for the section */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 20px; /* Padding around the section */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 40px auto; /* Space above and below the section */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px; /* Rounded corners */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 80%; /* Section width */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Publications List */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.publications-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column; /* Stack items vertically */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px; /* Space between items */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Individual Publication Items */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.publications-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: white; /* White background for each item */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px; /* Padding inside each item */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px; /* Rounded corners */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for each item */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Item Title */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.publications-item h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 0; /* Remove extra margin at the top */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem; /* Adjust title font size */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333; /* Text color */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Item Details */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.publications-item p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 5px 0; /* Spacing between lines */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem; /* Slightly smaller text */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #555; /* Muted text color */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.publications-item strong {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #333; /* Highlighted text */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Affiliations Section */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#affiliations h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.affiliations-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between; /* Adjust as needed */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.affiliations-section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.affiliation-section h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: top;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.affiliation-logos {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.affiliation-logos a img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.affiliation-logos a img:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.affiliations-container {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.affiliation-logos {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>justify-content: center; /* Center the logos on smaller screens */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Footer */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid #ddd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta http-equiv="Content-Style-Type" content="text/css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="Generator" content="Cocoa HTML Writer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="CocoaVersion" content="2487.4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style type="text/css"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {background-color: #f6f1e9}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;body id="home"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Navigation Bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#home"&gt;home&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#about"&gt;about&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#curriculum vitae "&gt;curriculum vitae &lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#publications-and-conferences"&gt;publications &amp; conferences&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="#affiliations"&gt;affiliations&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Profile Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="profile-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="profile-image"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;img src="profile.png" alt="Michal N. Goldstein"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="profile-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Michal N. Goldstein&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 2rem; font-weight: 700600; color: #555; margin-top: 5px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>PhD Candidate &lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>New York University</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Music Technology | Music Theory | Cognitive Psychology | Machine Learning</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Email: &lt;a href="mailto:mng320@nyu.edu"&gt;mng320 [at] nyu [dot] edu&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Social Links --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="social-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://www.linkedin.com/in/michal-goldstein-a39b7022a/" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="logos/linkedin.svg" alt="LinkedIn" class="icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://www.researchgate.net/profile/Michal-Goldstein-3" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="logos/researchgate-svgrepo-com.svg" alt="ResearchGate" class="icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://scholar.google.co.il/citations?user=_9RoPekAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="logos/google-scholar-svgrepo-com.svg" alt="GoogleScholar" class="icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://github.com/MichalGoldstein" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="logos/github-square-svgrepo-com.svg" alt="GitHub" class="icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;About&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="about-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="about-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="about-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Hi! I am Michal Goldstein, a PhD candidate in Music Technology at NYU. &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;My research focuses on the intersection of &lt;b&gt;music, cognitive science, and machine learning&lt;/b&gt;. &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;At the Music and Audio Research Laboratory, I employ &lt;b&gt;computational methods&lt;/b&gt; to investigate human perception and response to music, aiming to uncover underlying patterns in melodic structure and emotional expression.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;My academic background, encompassing an undergraduate degree in Psychology and Musicology and a Master's degree in Musicology and Cognitive Sciences from The Hebrew University of Jerusalem, has prepared me for my current research at NYU. I am particularly interested in exploring the &lt;b&gt;convergence of music and technology&lt;/b&gt;.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;In addition to my research, I am dedicated to &lt;b&gt;teaching and mentorship&lt;/b&gt;. As an adjunct professor and teaching assistant, I have guided students in music cognition, keyboard harmony, and research methodologies, fostering a collaborative and critical thinking environment.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;I invite you to explore my work and engage in the exciting dialogue between &lt;b&gt;music, the brain, and technology&lt;/b&gt;.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="curriculum vitae"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Curriculum Vitae&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Small Version of the CV --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cv-preview"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;embed src="Goldstein_CV.pdf" type="application/pdf" width="28%" height="550px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Button to Download the CV --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a href="Goldstein_CV.pdf" download="Goldstein_CV.pdf" target="_blank" rel="noopener noreferrer" &gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button&gt;Download Full CV&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="publications-and-conferences"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Publications and Conference Presentations&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="publications-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;The Melodic Contour of Speech Intonation&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; in preparation&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Michal N. Goldstein, Morwaread M. Farbood, Pablo Ripollés&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Exploring melodic contour: A clustering approach&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Michal N. Goldstein, Roni Granot, Pablo Ripollés, Morwaread M. Farbood&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2024&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Journal:&lt;/strong&gt; Music Perception&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; International Conference on New Interfaces for Musical Expression&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2021&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Authors:&lt;/strong&gt; Claire Pelofi,<span class="Apple-converted-space">  </span>Michal N. Goldstein , Dana Bevilacqua, Michael McPhee, Ellie Abrams, Pablo Ripollés&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Proceedings&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Exploring Melodic Contour Using Machine-Learning Tools&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; Conference for Musical Discussions by Early-Career Researchers&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2023&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Talk&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Exploring Melodic Contour: A Clustering Approach&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; International Conference for Systematic Musicology (SysMus)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2022&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Talk&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; New Interfaces for Musical Expression (NIME)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2021&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Poster Presentation&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;CHILLER: a Computer Human Interface for the Live Labeling of Emotional Responses&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; International Conference on Music Perception and Cognition (ESCOM/ICMPC)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2021&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Poster Presentation&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;An Empirical Investigation Into the Cognitive and Physical Influences of Bass and Syncopation&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; International Conference on Music Perception and Cognition (ESCOM/ICMPC)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2021&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Poster Presentation&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Perception of size of musical intervals&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Event:&lt;/strong&gt; The Jerusalem Brain Community Brain &amp; Beer event&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2018&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Invited Speaker&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Perceiving Musical Intervals: a test case for categorical perception&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; International Conference on Music Perception and Cognition (ESCOM/ICMPC)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2018&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Talk (long paper)&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Pitch Height Affects Perception of Musical Intervals&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; The Jerusalem Brain Community Annual Retreat&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2018&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Poster Presentation&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Pitch Height Affects Perception of Musical Intervals&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; The Israeli Conference on Cognition Research&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2018&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Poster Presentation&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Perceiving Musical Intervals: a test case for categorical perception&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; Music, Language and Cognition summer school (Lake Como)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2017&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Talk&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Perceiving Musical Intervals: a test case for categorical perception&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; The Jerusalem Brain Community Annual Retreat&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2017&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Poster Presentation (Selected for “Poster Blitz” presentation)&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="publications-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Perceiving Musical Intervals: a test case for categorical perception&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Conference Name:&lt;/strong&gt; The Israeli Conference on Cognition Research&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Year:&lt;/strong&gt; 2017&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;Poster Presentation&lt;/strong&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Affiliations --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="affiliations"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;Affiliations&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="affiliations-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Current Affiliations --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="affiliations-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Current Affiliations&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="affiliation-logos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://steinhardt.nyu.edu/marl/about/team" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/MARL.png" alt="Current Affiliation 1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://clame.nyu.edu/scientist" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/clame.png" alt="Current Affiliation 2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://www.ripolleslab.com/team.html" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/ripolleslab.png" alt="Current Affiliation 3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Past Affiliations --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="affiliations-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Past Affiliations&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="affiliation-logos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://en.musicology.huji.ac.il/book/about" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/musicology.png" alt="Past Affiliation 1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://www.musiclab-huji.com/he/our-team/prof.-roni-granot-" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/musicology_lab.PNG" alt="Past Affiliation 2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://elsc.huji.ac.il/people-directory/faculty-members/israel-nelken/" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/ELSC.svg" alt="Past Affiliation 3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://www.landaulab.com/people.html" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/landaulab.png" alt="Past Affiliation 4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;a href="https://en.mandelschool.huji.ac.il/people/michal-goldstein" target="_blank" rel="noopener noreferrer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;img src="logos/mandel.png" alt="Past Affiliation 4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt; <span class="Apple-converted-space">   </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&amp;copy; 2024 Michal N. Goldstein</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
